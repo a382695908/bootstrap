@@ -17,7 +17,7 @@
     "Twitter, Inc."
   ],
   "scripts": {
-    "start": "npm-run-all --parallel watch-css-main watch-css-docs watch-js-main watch-js-docs docs-watch",
+    "start": "npm-run-all --parallel watch docs-watch",
     "blc": "blc --exclude-external --filter-level 3 --get --ordered --recursive --host-requests 4 --input http://localhost:3000/",
     "http-server": "http-server --silent -p 3000",
     "bundlesize": "bundlesize",
@@ -75,7 +75,7 @@
     "saucelabs-test": "node build/saucelabs-unit-test.js",
     "dist": "npm-run-all --parallel css-main js",
     "test": "npm-run-all dist js-test docs-compile docs-lint bundlesize",
-    "watch": "npm-run-all --parallel watch-css-main watch-css-docs watch-js-main watch-js-docs",
+    "watch": "npm-run-all --parallel watch-*",
     "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\"",
     "watch-css-docs": "nodemon --watch site/docs/4.1/assets/scss/ --ext scss --exec \"npm run css-docs\"",
     "watch-js-main": "nodemon --watch js/src/ --ext js --exec \"npm run js-compile\"",
